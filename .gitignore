@@ -16,6 +16,6 @@
 #virtual machine crach logs
 hs_err_pid*
 
-.idea/
 out/
 *.iml
+/.idea/
