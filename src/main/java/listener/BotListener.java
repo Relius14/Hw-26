@@ -1,7 +1,9 @@
 package listener;
 
 import commands.Command;
+import commands.HelloCommand;
 import commands.PingCommand;
+import commands.WeekCommand;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -22,7 +24,9 @@ public class BotListener extends ListenerAdapter {
 
 		//TODO: automate command registering
 		commands.put("ping", new PingCommand());
-		//commands.put("ping", new PingCommand());
+		commands.put("week", new WeekCommand());
+		commands.put("hi", new HelloCommand());
+		commands.put("hello", new HelloCommand());
 	}
 
 	@Override
