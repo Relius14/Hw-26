@@ -1,8 +1,12 @@
 package listener;
 
+import com.google.gson.Gson;
 import commands.Command;
+import commands.DeleteCommand;
+import commands.GetCommand;
 import commands.HelloCommand;
 import commands.PingCommand;
+import commands.StoreCommand;
 import commands.WeekCommand;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -14,9 +18,12 @@ import java.util.Map;
 
 public class BotListener extends ListenerAdapter {
 
-	String prefix = "!";
+	public static Gson gson = new Gson();
+	public static Map<String, String> data;
 	public final Map<String, Command> commands;
 	public final Map<String, Command> aliases;
+	String prefix = "!";
+
 
 	public BotListener() {
 		commands = new HashMap<>();
@@ -27,6 +34,9 @@ public class BotListener extends ListenerAdapter {
 		commands.put("week", new WeekCommand());
 		commands.put("hi", new HelloCommand());
 		commands.put("hello", new HelloCommand());
+		commands.put("store", new StoreCommand());
+		commands.put("get", new GetCommand());
+		commands.put("delete", new DeleteCommand());
 	}
 
 	@Override

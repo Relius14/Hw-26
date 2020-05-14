@@ -2,7 +2,7 @@ package commands;
 
 import net.dv8tion.jda.api.entities.Message;
 
-import static util.MessageHandler.*;
+import static util.MessageHandler.send;
 
 public class PingCommand extends Command {
 
